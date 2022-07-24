@@ -1,5 +1,4 @@
-console.log(`js loaded!`);
-const navBar = document.querySelector('.navbar');
+const navBar = document.querySelector(".navbar");
 
 navBar.innerHTML = `
 
@@ -34,4 +33,20 @@ navBar.innerHTML = `
      </nav>
  </div>
 
-`
+`;
+
+for (let index = 0; index < cardsInfo.length; index++) {
+  const element = cardsInfo[index];
+  const cards = document.querySelector(".cards");
+  cards.innerHTML += `
+<div class="col-12 col-lg-4 py-3">
+    <div class="card">
+        <img src="./img/${element.img}" class="card-img-top img-size img-fluid h-25" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">${element.title}</h5>
+            <p class="card-text">${element.text}</p>
+            <a href="${element.link}" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+</div>`;
+}
